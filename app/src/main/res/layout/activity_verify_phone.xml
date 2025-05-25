@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:padding="24dp"
+    tools:context=".activities.VerifyPhoneActivity">
+
+    <TextView
+        android:id="@+id/verifyTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Подтверждение номера"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        android:textColor="?colorOnBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?colorOnSurfaceVariant"
+        android:lineSpacingExtra="4sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyTitleTextView"
+        tools:text="Введите 6-значный код, отправленный на номер +7 999 123-45-67" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/codeInputLayout"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Код из SMS"
+        app:counterEnabled="true"
+        app:counterMaxLength="6"
+        app:startIconDrawable="@drawable/ic_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/codeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="6"
+            android:paddingStart="48dp"
+            android:paddingEnd="16dp"
+            android:imeOptions="actionDone"
+            android:letterSpacing="0.3"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/verifyCodeButton"
+        style="@style/Widget.App.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Подтвердить код"
+        android:enabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/codeInputLayout"/>
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="?colorOnSurfaceVariant"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyCodeButton"
+        tools:text="Отправка SMS..." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resendCodeButton"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Отправить код повторно"
+        android:enabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusTextView"/>
+
+    <ProgressBar
+        android:id="@+id/verificationProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resendCodeButton"
+        tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Widget.App.CardView"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/serviceNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?colorOnSurface"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editServiceButton"
+            android:layout_marginEnd="8dp"
+            tools:text="Установка смесителя на кухне"/>
+
+        <TextView
+            android:id="@+id/servicePriceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/serviceNameTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/serviceNameTextView"
+            tools:text="от 1500 до 2000 руб за услугу"/>
+
+        <TextView
+            android:id="@+id/serviceDescriptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="?colorOnSurfaceVariant"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="Включает демонтаж старого и установку нового смесителя с подключением."
+        app:layout_constraintTop_toBottomOf="@id/servicePriceTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/serviceNameTextView"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editServiceButton"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_edit"
+            app:iconTint="?colorPrimary"
+            android:contentDescription="Редактировать услугу"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteServiceButton"
+            android:layout_marginEnd="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteServiceButton"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_delete"
+            app:iconTint="?colorError"
+            android:contentDescription="Удалить услугу"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

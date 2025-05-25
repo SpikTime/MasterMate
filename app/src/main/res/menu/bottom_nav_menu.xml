@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_masters_list"
+        android:icon="@drawable/ic_list"
+        android:title="Поиск" />
+
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/ic_map"
+        android:title="Карта" />
+
+    <item
+        android:id="@+id/navigation_favorites"
+        android:icon="@drawable/ic_favorite_border"
+    android:title="@string/favor" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Профиль" />
+
+</menu>

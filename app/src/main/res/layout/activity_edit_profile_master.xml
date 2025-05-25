@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:colorBackground"
+    tools:context=".activities.EditProfileMasterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/profileTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Редактирование профиля"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="?colorOnBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/editProfileImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_person"
+            app:civ_border_width="2dp"
+            app:civ_border_color="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileTitleTextView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/changePhotoButton"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Изменить фото"
+            app:icon="@drawable/ic_add_a_photo"
+            app:iconTint="?colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editProfileImageView"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Имя"
+            app:startIconDrawable="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/changePhotoButton" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:paddingStart="48dp"
+                android:paddingEnd="16dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/specializationTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Ваши специализации:"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameInputLayout" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/specializationChipGroupEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="4dp"
+            app:selectionRequired="false"
+            app:singleSelection="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specializationTitleTextView">
+            <!-- Чипы добавляются программно -->
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Описание"
+            app:startIconDrawable="@drawable/ic_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specializationChipGroupEdit">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:paddingStart="48dp"
+                android:paddingEnd="16dp"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="3"
+                android:gravity="top" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Номер телефона"
+            app:startIconDrawable="@drawable/ic_call"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneEditText"
+                android:layout_width="match_parent"
+                android:paddingStart="48dp"
+                android:paddingEnd="16dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/locationTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Адрес работы"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?colorOnBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneInputLayout" />
+
+        <FrameLayout
+            android:id="@+id/locationDisplayContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/surface_container_background"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationTitleTextView">
+
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="?colorOnSurface"
+                tools:text="ул. Пушкина, д. Колотушкина, кв. 1"
+                android:text="Адрес не выбран" />
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectLocationButton"
+            style="@style/Widget.App.Button.Outlined"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Выбрать на карте"
+            app:icon="@drawable/ic_map_marker"
+            app:iconGravity="textStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationDisplayContainer"/>
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/selectLocationButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/workingHoursTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="График работы"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?colorOnBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <LinearLayout
+            android:id="@+id/workingHoursContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/surface_container_background"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/workingHoursTitleTextView">
+
+            <include android:id="@+id/includeMonday" layout="@layout/item_edit_working_day" />
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" app:dividerInsetStart="0dp"/>
+            <include android:id="@+id/includeTuesday" layout="@layout/item_edit_working_day" />
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" app:dividerInsetStart="0dp"/>
+            <include android:id="@+id/includeWednesday" layout="@layout/item_edit_working_day" />
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" app:dividerInsetStart="0dp"/>
+            <include android:id="@+id/includeThursday" layout="@layout/item_edit_working_day" />
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" app:dividerInsetStart="0dp"/>
+            <include android:id="@+id/includeFriday" layout="@layout/item_edit_working_day" />
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" app:dividerInsetStart="0dp"/>
+            <include android:id="@+id/includeSaturday" layout="@layout/item_edit_working_day" />
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" app:dividerInsetStart="0dp"/>
+            <include android:id="@+id/includeSunday" layout="@layout/item_edit_working_day" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/uploadProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            style="@style/Widget.App.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="Сохранить"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/workingHoursContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

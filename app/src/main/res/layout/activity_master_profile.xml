@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MasterProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:layout_marginTop="30dp"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:contentScrim="?attr/colorSurface"
+            app:statusBarScrim="@android:color/transparent"
+            app:titleEnabled="false" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:paddingBottom="15dp"
+                app:layout_collapseMode="parallax">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/masterProfileImageView"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_person"
+                    app:civ_border_color="?attr/colorPrimary"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/masterProfileNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnSurface"
+                    app:layout_constraintBottom_toTopOf="@+id/masterProfileSpecializationTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/masterProfileImageView"
+                    app:layout_constraintTop_toTopOf="@+id/masterProfileImageView"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Очень Длинное Имя Фамилия Мастера" />
+
+                <TextView
+                    android:id="@+id/masterProfileSpecializationTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="@color/textColorSecondaryLight"
+                    app:layout_constraintBottom_toTopOf="@+id/masterCurrentStatusTextView"
+                    app:layout_constraintEnd_toEndOf="@+id/masterProfileNameTextView"
+                    app:layout_constraintStart_toStartOf="@+id/masterProfileNameTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/masterProfileNameTextView" />
+
+                <TextView
+                    android:id="@+id/masterCurrentStatusTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:drawablePadding="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/ic_dot_indicator"
+                    app:layout_constraintBottom_toTopOf="@+id/masterProfileRatingBar"
+                    app:layout_constraintEnd_toEndOf="@+id/masterProfileSpecializationTextView"
+                    app:layout_constraintStart_toStartOf="@+id/masterProfileSpecializationTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/masterProfileSpecializationTextView"
+                    tools:drawableTint="@color/colorPrimaryBlue"
+                    tools:text="Сегодня работает"
+                    tools:textColor="@color/colorPrimaryBlue"
+                    tools:visibility="visible" />
+
+                <RatingBar
+                    android:id="@+id/masterProfileRatingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.1"
+                    app:layout_constraintBottom_toBottomOf="@+id/masterProfileImageView"
+                    app:layout_constraintStart_toStartOf="@+id/masterCurrentStatusTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/masterCurrentStatusTextView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="35dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/masterProfileRatingBar"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/masterProfileImageView"
+                    app:layout_constraintTop_toTopOf="@+id/masterProfileRatingBar">
+
+                    <ImageView
+                        style="@style/ProfileFieldIcon"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_completed_orders" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Выполнено заказов: "
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <TextView
+                        android:id="@+id/tvCompletedOrdersCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        tools:text="123" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+
+            android:paddingBottom="32dp"
+            android:clipToPadding="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/contactButton"
+                style="@style/Widget.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Связаться"
+                app:icon="@drawable/ic_call"
+                app:iconGravity="textStart"
+                app:iconPadding="5dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addToFavoritesButton"
+                style="@style/Widget.App.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:iconGravity="textStart"
+                app:iconPadding="5dp"
+                tools:text="В избранное"
+                tools:icon="@drawable/ic_favorite_border"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/createOrderButton"
+                style="@style/Widget.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:iconPadding="5dp"
+                android:text="Оставить заявку"
+                app:icon="@drawable/ic_send"
+                app:iconGravity="textStart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/leaveReviewButton"
+                style="@style/Widget.App.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Оставить отзыв" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_before_services"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/servicesTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Услуги и цены"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnBackground"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+            tools:visibility="visible"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/masterServicesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/item_service_display"
+            tools:itemCount="2"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/noServicesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Мастер пока не добавил информацию об услугах."
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:visibility="gone"
+            tools:visibility="visible"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/descriptionTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Описание"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnBackground"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/masterProfileDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="@color/textColorSecondaryLight"
+                android:lineSpacingExtra="5sp"
+                tools:text="Подробное и увлекательное описание опыта..." />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_after_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/workingHoursSectionTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="График работы"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnBackground"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:id="@+id/workingHoursDisplayContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:background="@drawable/surface_container_background_stroked"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Пн"/>
+                    <TextView android:id="@+id/mondayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="09:00 - 18:00"/>
+                </LinearLayout>
+                <com.google.android.material.divider.MaterialDivider style="@style/WorkingHoursDisplayDivider"/>
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Вт"/>
+                    <TextView android:id="@+id/tuesdayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="09:00 - 18:00"/>
+                </LinearLayout>
+                <com.google.android.material.divider.MaterialDivider style="@style/WorkingHoursDisplayDivider"/>
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Ср"/>
+                    <TextView android:id="@+id/wednesdayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="Выходной"/>
+                </LinearLayout>
+                <com.google.android.material.divider.MaterialDivider style="@style/WorkingHoursDisplayDivider"/>
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Чт"/>
+                    <TextView android:id="@+id/thursdayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="09:00 - 18:00"/>
+                </LinearLayout>
+                <com.google.android.material.divider.MaterialDivider style="@style/WorkingHoursDisplayDivider"/>
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Пт"/>
+                    <TextView android:id="@+id/fridayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="09:00 - 18:00"/>
+                </LinearLayout>
+                <com.google.android.material.divider.MaterialDivider style="@style/WorkingHoursDisplayDivider"/>
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Сб"/>
+                    <TextView android:id="@+id/saturdayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="10:00 - 16:00"/>
+                </LinearLayout>
+                <com.google.android.material.divider.MaterialDivider style="@style/WorkingHoursDisplayDivider"/>
+                <LinearLayout style="@style/WorkingHoursDisplayRow">
+                    <TextView style="@style/WorkingHoursDisplayDayName" android:text="Вс"/>
+                    <TextView android:id="@+id/sundayHoursTextView" style="@style/WorkingHoursDisplayTime" tools:text="Выходной"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_before_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/reviewsTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Отзывы"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnBackground"
+                android:layout_marginBottom="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reviewsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_review"
+                tools:itemCount="3" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.App.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="top|center"
+        app:layout_collapseMode="pin"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="?attr/colorOnSurfaceVariant"
+        app:title="" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MasterMate</string>
+    <string name="default_notification_channel_id">default_channel</string>
+    <string name="favor">Избранное</string>
+    <string name="favoron">Список избранных пуст</string>
+    <string name="regstring">Регистрация</string>
+    <string name="app_logo">App Logo</string>
+    <string name="email">Email</string>
+    <string name="mastermatelogout">Вход в MasterMate</string>
+    <string name="NoaccauntRegister">Нет аккаунта? Зарегистрироваться</string>
+    <string name="Login">Войти</string>
+    <string name="Fogetpassword">Забыли пароль?</string>
+    <string-array name="specializations_array">
+        <item>Все</item>
+        <item>Сантехник</item>
+        <item>Электрик</item>
+        <item>Плотник</item>
+        <item>Мастер на час</item>
+    </string-array>
+    <string-array name="master_specializations_list">
+        <item>Все</item>
+        <item>Сантехник</item>
+        <item>Электрик</item>
+        <item>Плотник</item>
+        <item>Мастер на час</item>
+    </string-array>
+
+    <string-array name="price_units_array">
+        <item>за услугу</item>
+        <item>за час</item>
+        <item>за м²</item>
+        <item>за шт.</item>
+        <item>за день</item>
+        <item>по договоренности</item>
+    </string-array>
+</resources>

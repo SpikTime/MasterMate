@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".activities.SelectOrderLocationActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_select_location"
+            style="@style/Widget.App.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Выберите адрес заявки"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.yandex.mapkit.mapview.MapView
+        android:id="@+id/mapViewOrderLocation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintBottom_toTopOf="@+id/addressInfoCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/centerMarkerImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_location_marker_center"
+        android:alpha="0.9"
+        app:layout_constraintTop_toTopOf="@+id/mapViewOrderLocation"
+        app:layout_constraintBottom_toBottomOf="@+id/mapViewOrderLocation"
+        app:layout_constraintStart_toStartOf="@+id/mapViewOrderLocation"
+        app:layout_constraintEnd_toEndOf="@+id/mapViewOrderLocation"
+        app:layout_constraintVertical_bias="0.48"
+        android:contentDescription="Центральный маркер" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/addressInfoCard"
+        style="@style/Widget.App.CardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirmOrderLocationButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выбранный адрес:"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"/>
+
+            <TextView
+                android:id="@+id/selectedOrderAddressTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="?colorOnSurface"
+                android:minLines="2"
+                tools:text="ул. Центральная, д. 1, кв. 101, г. Москва, Россия, 123456"/>
+
+            <ProgressBar
+                android:id="@+id/addressGeocodingProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmOrderLocationButton"
+        style="@style/Widget.App.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Подтвердить этот адрес"
+        app:icon="@drawable/ic_check"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCenterOnUserOrderLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_my_location"
+        app:tint="?colorOnPrimary"
+        app:backgroundTint="?colorPrimary"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toTopOf="@+id/addressInfoCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Мое местоположение" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:colorBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activities.OrderDetailsActivity"
+        android:padding="16dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_order_details"
+            style="@style/Widget.App.Toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Детали заказа"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="-16dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginTop="-16dp"/>
+
+        <ProgressBar
+            android:id="@+id/orderDetailsProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_order_details"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible"/>
+
+        <LinearLayout
+            android:id="@+id/orderDetailsContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_order_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                style="@style/ProfileFieldLabel"
+                android:text="Статус заказа:"/>
+            <TextView
+                android:id="@+id/tvOrderStatus"
+                style="@style/ProfileFieldValue"
+                tools:text="Принят"/>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+
+            <TextView
+                style="@style/ProfileFieldLabel"
+                android:text="Клиент:"/>
+            <TextView
+                android:id="@+id/tvOrderClientName"
+                style="@style/ProfileFieldValue"
+                tools:text="Иван Петров"/>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+
+            <TextView
+                style="@style/ProfileFieldLabel"
+                android:text="Телефон клиента:"/>
+            <TextView
+                android:id="@+id/tvOrderClientPhone"
+                style="@style/ProfileFieldValue"
+                app:drawableEndCompat="@drawable/ic_call"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                tools:text="+7 (999) 123-45-67"/>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+
+            <TextView
+                style="@style/ProfileFieldLabel"
+                android:text="Адрес:"/>
+            <TextView
+                android:id="@+id/tvOrderAddress"
+                style="@style/ProfileFieldValue"
+                tools:text="ул. Строителей, д. 10, кв. 5, Москва"/>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+
+            <TextView
+                style="@style/ProfileFieldLabel"
+                android:text="Описание проблемы:"/>
+            <TextView
+                android:id="@+id/tvOrderProblemDescription"
+                style="@style/ProfileFieldValue"
+                android:layout_marginTop="4dp"
+                android:lineSpacingExtra="4dp"
+                tools:text="Течет кран на кухне, нужно срочно починить. Пожалуйста, помогите как можно скорее, очень неприятная ситуация."/>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/ProfileFieldDivider" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+
+            <TextView
+                style="@style/ProfileFieldLabel"
+                android:text="Дата создания:"/>
+            <TextView
+                android:id="@+id/tvOrderCreationDate"
+                style="@style/ProfileFieldValue"
+                tools:text="16 мая 2025, 10:30"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOrderAction"
+                style="@style/Widget.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                tools:text="Принять заказ"
+                tools:visibility="visible"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

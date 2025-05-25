@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".activities.ReviewActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_review"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_review"
+            style="@style/Widget.App.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Оставить отзыв"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView_review"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout_review"
+        app:layout_constraintBottom_toTopOf="@+id/submitReviewButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/ratingLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ваша оценка мастеру:"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?colorOnBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/reviewRatingBar"
+            style="?android:attr/ratingBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:theme="@style/Widget.App.RatingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingLabelTextView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reviewInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/reviewRatingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:counterEnabled="true"
+        app:counterMaxLength="500"
+        android:hint="Ваш комментарий (необязательно)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reviewEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="5"
+        android:maxLines="10"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+<com.google.android.material.button.MaterialButton
+android:id="@+id/submitReviewButton"
+style="@style/Widget.App.Button"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_marginStart="24dp"
+android:layout_marginEnd="24dp"
+android:layout_marginBottom="24dp"
+android:text="Отправить отзыв"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent" />
+
+<ProgressBar
+android:id="@+id/submitReviewProgressBar"
+style="?android:attr/progressBarStyle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:visibility="gone"
+android:elevation="8dp"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

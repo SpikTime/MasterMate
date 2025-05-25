@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/serviceDisplayNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+        android:textColor="?colorOnSurface"
+        tools:text="Установка и подключение стиральной машины"/>
+
+    <TextView
+        android:id="@+id/serviceDisplayPriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?colorPrimary"
+        android:textStyle="bold"
+        tools:text="от 1500 руб за услугу"/>
+
+    <TextView
+        android:id="@+id/serviceDisplayDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="?colorOnSurfaceVariant"
+        android:visibility="gone"
+    tools:visibility="visible"
+    tools:text="Полный комплекс работ: подключение к воде, канализации и электричеству."/>
+
+</LinearLayout>

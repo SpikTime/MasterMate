@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988691623856",
+    "project_id": "master-mate-2",
+    "storage_bucket": "master-mate-2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988691623856:android:00821930ffa9aeb44c7075",
+        "android_client_info": {
+          "package_name": "com.example.mastermate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbxluI8WCiTTaHemCQMe8Qg4VLVV2LFzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

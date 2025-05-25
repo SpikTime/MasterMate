@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Основные Цвета -->
+    <color name="colorPrimaryBlue">#2196F3</color>         <!-- Основной синий -->
+    <color name="colorPrimaryBlueDarkVariant">#1976D2</color>  <!-- Темный синий (для статус бара) -->
+    <color name="colorOnPrimaryLight">#FFFFFF</color>        <!-- Текст/иконки на синем фоне -->
+
+    <!-- Фоны и Поверхности -->
+    <color name="colorBackgroundLight">#FAFAFA</color>      <!-- Основной фон приложения (очень светло-серый) -->
+    <color name="colorSurfaceLight">#FFFFFF</color>         <!-- Фон карточек, диалогов, полей ввода (белый) -->
+    <color name="colorSurfaceVariantLight">#F0F0F0</color>  <!-- Слегка отличающийся фон (если нужен) -->
+    <color name="colorOutlineLight">#E0E0E0</color>         <!-- Цвет обводок, разделителей (светло-серый) -->
+
+    <!-- Текст на Фонах/Поверхностях -->
+    <color name="colorOnBackgroundLight">#1F1F1F</color>     <!-- Основной темный текст на фоне -->
+    <color name="colorOnSurfaceLight">#1F1F1F</color>        <!-- Основной темный текст на поверхностях -->
+    <color name="colorOnSurfaceVariantLight">#424242</color> <!-- Текст/иконки на SurfaceVariant (темно-серый) -->
+
+    <!-- Цвета Ошибки -->
+    <color name="colorErrorLight">#D32F2F</color>            <!-- Основной красный цвет ошибки -->
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorOnErrorLight">#FFFFFF</color>
+    <color name="chip_default_background_light">#E0E0E0</color> <!-- Серый -->
+    <color name="chip_status_new_background">#2196F3</color> <!-- Синий -->
+    <color name="chip_status_accepted_background">#4CAF50</color> <!-- Зеленый -->
+    <color name="chip_status_inprogress_background">#FF9800</color> <!-- Оранжевый -->
+    <color name="chip_status_completed_master_background">#9E9E9E</color> <!-- Темно-серый -->
+    <color name="chip_status_confirmed_client_background">#BDBDBD</color> <!-- Светло-серый -->
+    <color name="chip_status_rejected_background">#F44336</color> <!-- Красный -->
+    <color name="chip_status_cancelled_background">#F44336</color> <!-- Красный -->
+    <color name="chip_status_disputed_background">#FFC107</color> <!-- Янтарный/Желтый -->
+
+    <!-- Цвета для текста статусов заказа -->
+    <color name="chip_default_text_light">#212121</color> <!-- Темно-серый/Черный -->
+    <color name="chip_status_new_text">#FFFFFF</color> <!-- Белый -->
+    <color name="chip_status_accepted_text">#FFFFFF</color> <!-- Белый -->
+    <color name="chip_status_inprogress_text">#FFFFFF</color> <!-- Белый -->
+    <color name="chip_status_completed_master_text">#FFFFFF</color> <!-- Белый -->
+    <color name="chip_status_confirmed_client_text">#212121</color> <!-- Темно-серый/Черный -->
+    <color name="chip_status_rejected_text">#FFFFFF</color> <!-- Белый -->
+    <color name="chip_status_cancelled_text">#FFFFFF</color> <!-- Белый -->
+    <color name="chip_status_disputed_text">#212121</color> <!-- Темно-серый/Черный -->
+
+
+    <!-- Цвета Текста (Для удобства) -->
+    <color name="textColorPrimaryLight">@color/colorOnBackgroundLight</color> <!-- Основной цвет текста -->
+    <color name="textColorSecondaryLight">#757575</color>    <!-- Вторичный текст (серый) -->
+    <color name="textColorHintLight">#9E9E9E</color>         <!-- Текст подсказок (светло-серый) -->
+
+    <!-- Другие Цвета -->
+    <color name="ratingStarActive">#FFC107</color>           <!-- Цвет активных звезд рейтинга (желтый) -->
+    <color name="dividerColorLight">@color/colorOutlineLight</color> <!-- Цвет разделителей -->
+
+    <!--Базовые/Общие Цвета-->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorWarning">#FF9800</color>
+
+</resources>

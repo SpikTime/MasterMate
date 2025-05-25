@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дополнительная информация (Мастер)"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textColor="?colorOnBackground"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Укажите ваши специализации:"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginBottom="8dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/specializationChipGroupRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="4dp"
+            app:selectionRequired="false"
+            app:singleSelection="false">
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descriptionTextField"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="Описание"
+        app:startIconDrawable="@drawable/ic_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp"
+            android:paddingEnd="16dp"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="3"
+            android:gravity="top"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/experienceTextField"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="Опыт работы (лет)"
+        app:startIconDrawable="@drawable/ic_work_history">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextExperience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp"
+            android:paddingEnd="16dp"
+            android:inputType="number"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneTextField"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="Номер телефона"
+        app:startIconDrawable="@drawable/ic_call">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp"
+            android:paddingEnd="16dp"
+            android:inputType="phone"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cityTextField"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="Город"
+        app:startIconDrawable="@drawable/ic_location_city">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp"
+            android:paddingEnd="16dp"
+            android:inputType="textCapWords"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addressTextField"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Адрес (улица, дом)"
+        app:startIconDrawable="@drawable/ic_map_marker">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp"
+            android:paddingEnd="16dp"
+            android:inputType="textCapSentences"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonUploadExamples"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Загрузить примеры работ (неактивно)"
+        android:enabled="false"
+        android:textColor="?colorPrimary"/>
+
+</LinearLayout>

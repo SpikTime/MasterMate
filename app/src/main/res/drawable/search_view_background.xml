@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?attr/colorSurface" /> <!-- Цвет фона как у карточек -->
+    <corners android:radius="24dp" /> <!-- Большое скругление для овальной формы -->
+</shape>

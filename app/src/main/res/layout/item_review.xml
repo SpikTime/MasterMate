@@ -1,0 +1,62 @@
+<!-- res/layout/item_review.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/reviewUserNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+        android:textColor="?colorOnBackground"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reviewRatingBar"
+        android:layout_marginEnd="8dp"
+        tools:text="Имя Пользователя" />
+
+    <RatingBar
+        android:id="@+id/reviewRatingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="0.1"
+        android:progressTint="?colorPrimary"
+        android:secondaryProgressTint="@color/textColorHintLight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/reviewUserNameTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/reviewUserNameTextView"/>
+
+    <TextView
+        android:id="@+id/reviewDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+        android:textColor="@color/textColorHintLight"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviewUserNameTextView"
+        tools:text="16 мая 2025, 10:30"/>
+
+    <TextView
+        android:id="@+id/reviewTextTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+    android:textColor="@color/textColorSecondaryLight"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/reviewDateTextView"
+    tools:text="Очень хороший мастер, все сделал быстро и качественно! Рекомендую." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

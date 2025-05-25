@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".activities.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingHorizontal="16dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/search_view_background_darker"
+            app:queryHint="Поиск мастеров"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/menuButton"
+            android:layout_marginEnd="8dp"/>
+
+
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Меню"
+                android:src="@drawable/ic_menu"
+                app:tint="?colorOnBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/searchView"
+                app:layout_constraintBottom_toBottomOf="@+id/searchView"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingVertical="8dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="12dp"
+            android:background="?colorSurface">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/specializationChipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true"
+                app:singleSelection="true"
+                app:chipSpacingHorizontal="8dp">
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:colorBackground"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"> <!-- Важно для прокрутки -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mastersRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_master" />
+
+
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminateTint="?colorPrimary" />
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/dayNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="?colorOnSurface"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Понедельник"/>
+
+    <TextView
+        android:id="@+id/startTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="?colorPrimary"
+        app:layout_constraintStart_toEndOf="@id/dayNameTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        tools:text="09:00"/>
+
+    <TextView
+        android:id="@+id/timeSeparatorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - "
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="?colorOnSurfaceVariant"
+        app:layout_constraintStart_toEndOf="@id/startTimeTextView"
+        app:layout_constraintTop_toTopOf="@id/startTimeTextView"
+        app:layout_constraintBottom_toBottomOf="@id/startTimeTextView"
+        android:layout_marginStart="4dp"/>
+
+
+    <TextView
+        android:id="@+id/endTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="?colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/startTimeTextView"
+        app:layout_constraintStart_toEndOf="@id/timeSeparatorTextView"
+        app:layout_constraintTop_toTopOf="@id/startTimeTextView"
+        app:layout_constraintVertical_bias="0.25"
+        tools:text="18:00" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/isWorkingSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="4dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Завершение заказа"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/finalPriceInputLayout"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Итоговая цена (руб.)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextFinalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:imeOptions="actionNext"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/masterCommentInputLayout"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Комментарий мастера (необязательно)"
+        app:counterEnabled="true"
+        app:counterMaxLength="300">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextMasterComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textCapSentences"
+        android:minLines="2"
+        android:maxLines="5"
+        android:gravity="top"
+        android:imeOptions="actionDone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

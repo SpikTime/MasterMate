@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:colorBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        tools:context=".activities.CreateOrderActivity">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_create_order"
+            style="@style/Widget.App.Toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="-24dp"
+            android:layout_marginTop="-24dp"
+            android:layout_marginEnd="-24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Новая заявка" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/masterInfoCard"
+            style="@style/Widget.App.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_create_order"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/orderMasterImageView"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_person"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/orderMasterNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textColor="?colorOnSurface"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintStart_toEndOf="@id/orderMasterImageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/orderMasterImageView"
+                    app:layout_constraintBottom_toTopOf="@id/orderMasterSpecTextView"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Иван Мастеров"/>
+
+                <TextView
+                    android:id="@+id/orderMasterSpecTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                    android:textColor="?colorOnSurfaceVariant"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintStart_toStartOf="@id/orderMasterNameTextView"
+                    app:layout_constraintEnd_toEndOf="@id/orderMasterNameTextView"
+                    app:layout_constraintTop_toBottomOf="@id/orderMasterNameTextView"
+                    app:layout_constraintBottom_toBottomOf="@id/orderMasterImageView"
+                    tools:text="Сантехник, Электрик"/>
+
+                <ProgressBar
+                    android:id="@+id/masterInfoProgressBar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:visibility="visible"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/problemDescriptionInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Опишите проблему"
+            app:counterEnabled="true"
+            app:counterMaxLength="500"
+            app:layout_constraintTop_toBottomOf="@id/masterInfoCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/problemDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="4"
+                android:gravity="top" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/addressTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Адрес выполнения работ"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/problemDescriptionInputLayout" />
+
+        <TextView
+            android:id="@+id/selectedAddressTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="56dp"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/surface_container_background"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="?colorOnSurface"
+            android:gravity="center_vertical"
+            android:hint="Нажмите, чтобы выбрать адрес на карте"
+            app:drawableStartCompat="@drawable/ic_map_marker"
+            app:drawableTint="?colorOnSurfaceVariant"
+            android:drawablePadding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/addressTitleTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/selectAddressButton"
+            android:layout_marginEnd="8dp"
+            tools:text="ул. Ленина, д. 1, кв. 1, Москва"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectAddressButton"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:icon="@drawable/ic_edit"
+            app:iconTint="?colorPrimary"
+            android:tooltipText="Выбрать адрес на карте"
+            app:layout_constraintTop_toTopOf="@id/selectedAddressTextView"
+            app:layout_constraintBottom_toBottomOf="@id/selectedAddressTextView"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/addressProgressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/selectedAddressTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/selectedAddressTextView"
+            app:layout_constraintEnd_toEndOf="@+id/selectedAddressTextView"
+            android:layout_marginEnd="16dp"
+            tools:visibility="visible"/>
+
+
+        <TextView
+            android:id="@+id/phoneTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Ваш контактный номер"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectedAddressTextView" />
+
+        <TextView
+            android:id="@+id/clientPhoneNumberTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:minHeight="48dp"
+            android:background="@drawable/surface_container_background"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="?colorOnSurface"
+            android:gravity="center_vertical"
+            app:drawableStartCompat="@drawable/ic_call"
+            app:drawableTint="?colorOnSurfaceVariant"
+            android:drawablePadding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/phoneTitleTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="+7 (999) 555-44-33"/>
+
+        <ProgressBar
+            android:id="@+id/phoneProgressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/clientPhoneNumberTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/clientPhoneNumberTextView"
+            app:layout_constraintEnd_toEndOf="@+id/clientPhoneNumberTextView"
+            android:layout_marginEnd="16dp"
+            tools:visibility="visible"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitOrderButton"
+            style="@style/Widget.App.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="Отправить заявку"
+            app:layout_constraintTop_toBottomOf="@id/clientPhoneNumberTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0"/>
+
+        <ProgressBar
+            android:id="@+id/orderSubmitProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:elevation="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

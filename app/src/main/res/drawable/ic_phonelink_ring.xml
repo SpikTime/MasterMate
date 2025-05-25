@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">  <!-- Цвет будет управляться через app:tint или программно -->
+    <path
+        android:fillColor="@android:color/white"
+    android:pathData="M20.01,15.38c-1.23,-0.13 -2.42,-0.43 -3.53,-0.81 -0.34,-0.12 -0.74,-0.03 -1,0.24l-2.2,2.2c-2.83,-1.44 -5.15,-3.75 -6.59,-6.59l2.2,-2.2c0.27,-0.26 0.35,-0.66 0.24,-1C8.23,6.25 7.93,5.05 7.8,3.82c-0.13,-1.23 -1.21,-2.16 -2.45,-2.16H4.08C2.78,1.66 1.67,2.78 1.66,4.08c0,10.83 8.81,19.64 19.64,19.64 1.3,0 2.43,-1.11 2.43,-2.41v-1.27c0,-1.25 -0.93,-2.33 -2.16,-2.45zM21,11h-2c0,-3.86 -3.14,-7 -7,-7V2c5.01,0 9,3.99 9,9zM17,11h-2c0,-1.65 -1.35,-3 -3,-3V6c2.79,0 5,2.21 5,5z"/>
+</vector>

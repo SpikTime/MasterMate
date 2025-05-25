@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/serviceNameInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Название услуги *">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextServiceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/serviceDescriptionInputLayout"
+            style="@style/Widget.App.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Краткое описание (необязательно)"
+            app:counterEnabled="true"
+            app:counterMaxLength="150">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextServiceDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2"
+                android:gravity="top"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/priceMinInputLayout"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:hint="Цена от (руб.)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPriceMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/priceMaxInputLayout"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Цена до (руб.)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPriceMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/priceUnitLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Единица измерения цены *"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorOnSurfaceVariant"/>
+
+        <Spinner
+            android:id="@+id/spinnerPriceUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="* Обязательные поля"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:paddingTop="24dp"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".activities.FavoritesActivity">
+
+
+    <TextView
+        android:id="@+id/favoritesTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/favor"
+    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+    android:textColor="?colorOnBackground"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/favoritesTitleTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favoritesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp"
+        android:visibility="gone"
+        tools:listitem="@layout/item_master"
+        tools:visibility="visible"
+        tools:itemCount="5"/>
+
+
+        <TextView
+            android:id="@+id/emptyFavoritesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/favoron"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/textColorSecondaryLight"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:drawableTop="@drawable/ic_favorite_border"
+        android:drawablePadding="16dp"
+        android:gravity="center_horizontal"/>
+
+
+        <ProgressBar
+            android:id="@+id/favoritesLoadingProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+        android:indeterminateTint="?colorPrimary"
+        tools:visibility="visible"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_map"
+        android:orderInCategory="70"
+        android:title="Карта"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:orderInCategory="80"
+        android:title="Профиль"
+        app:showAsAction="never" />
+
+
+
+    <item
+        android:id="@+id/action_favorites"
+        android:orderInCategory="85"
+    android:title="@string/favor"
+    app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_my_orders"
+        android:orderInCategory="75"
+        android:title="Мои заказы"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_list"
+    android:orderInCategory="90"
+    android:title="Список"
+    app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="Выход"
+        app:showAsAction="never" />
+
+</menu>

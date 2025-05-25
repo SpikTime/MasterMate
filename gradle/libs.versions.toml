@@ -1,0 +1,40 @@
+[versions]
+agp = "8.9.1"
+firebaseMessaging = "24.1.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+mapsMobile = "4.7.0-full"
+material = "1.12.0"
+activity = "1.10.0"
+constraintlayout = "2.2.0"
+googleGmsGoogleServices = "4.4.2"
+firebaseDatabase = "21.0.0"
+datastoreCoreAndroid = "1.1.3"
+playServicesMaps = "19.1.0"
+recyclerview = "1.4.0"
+search = "4.7.0"
+toolsCore = "1.0.0-alpha12"
+
+[libraries]
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+maps-mobile = { module = "com.yandex.android:maps.mobile", version.ref = "mapsMobile" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+datastore-core-android = { group = "androidx.datastore", name = "datastore-core-android", version.ref = "datastoreCoreAndroid" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
+recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+search = { module = "com.yandex.android:search", version.ref = "search" }
+tools-core = { group = "androidx.privacysandbox.tools", name = "tools-core", version.ref = "toolsCore" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+
