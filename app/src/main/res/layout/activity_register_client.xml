@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/clientPhoneInputLayout"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Номер телефона *"
+        app:startIconDrawable="@drawable/ic_call">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextClientPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp"
+        android:paddingEnd="16dp"
+        android:inputType="phone"
+        android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Для регистрации клиента доп. данные не требуются."
-        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-        android:textColor="@color/textColorSecondaryLight"/>
+        android:text="* Обязательное поле для клиента"
+        android:textAppearance="?attr/textAppearanceCaption"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"/>
 
 </LinearLayout>
